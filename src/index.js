@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Modal from "./Modal.vue";
 import Dialog from "./Dialog.vue";
 import ModalsContainer from "./ModalsContainer.vue";
@@ -90,3 +91,10 @@ const Plugin = {
 };
 
 export default Plugin;
+=======
+// this is entry point
+
+import VueVersion from './Version.vue'
+
+export default VueVersion
+>>>>>>> 128569fae61b1db1cd88f4a220cb68d61747071c
