@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
+  context: path.resolve(__dirname, "../"),
   entry: './dev/index.js',
   mode: 'development',
   output: {
@@ -10,10 +11,12 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          extractCSS: true
+        }
       }, {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -30,6 +33,6 @@ module.exports = {
   performance: {
     hints: false
   },
-  // plugins: [new ExtractTextPlugin("styles.css")],
+  plugins: [new ExtractTextPlugin("styles.css")],
   devtool: '#eval-source-map'
 }

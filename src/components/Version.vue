@@ -3,18 +3,17 @@
     You are using Vue {{version}}
   </div>
 </template>
- 
-<script type="text/javascript">
-import Vue from "vue";
+
+<script>
 export default {
-  computed: {
-    version() {
-      return Vue.version;
-    }
+  data() {
+    return {
+      version: "hello,world"
+    };
   }
 };
 </script>
- 
+
 <style>
 .version {
   font-weight: bold;
