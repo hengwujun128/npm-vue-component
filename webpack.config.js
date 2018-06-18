@@ -1,6 +1,4 @@
-// function buildConfig(env) {
-//   return require('./build/' + env + '.js');
-// }
+// function buildConfig(env) {   return require('./build/' + env + '.js'); }
 // module.exports = buildConfig;
 
 var path = require('path')
@@ -30,7 +28,7 @@ module.exports = {
     // specify your output directory...
     path: path.resolve(__dirname, './dist'),
     // and filename
-    filename: 'vuejs-hello-app.js'
+    filename: 'index.js'
   }
 }
 
@@ -42,14 +40,14 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
+    new webpack
+      .optimize
+      .UglifyJsPlugin({
+        sourceMap: true,
+        compress: {
+          warnings: false
+        }
+      }),
+    new webpack.LoaderOptionsPlugin({minimize: true})
   ])
 }

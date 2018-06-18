@@ -5,11 +5,17 @@
 </template>
 
 <script>
+import Vue from "vue";
 export default {
   data() {
     return {
-      version: "hello,world"
+      version1: "hello,world"
     };
+  },
+  computed: {
+    version() {
+      return Vue.version;
+    }
   }
 };
 </script>
